@@ -1,4 +1,4 @@
-import {Builder, By, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver";
+import {Builder, By, Key, Capabilities, until, WebDriver, WebElement} from "selenium-webdriver";
 //import { Options } from "selenium-webdriver/edge";
 const chromedriver = require('chromedriver'); 
 
@@ -20,7 +20,7 @@ export class BasePage {
         .withCapabilities(Capabilities.chrome())
         .build();
         if(options && options.url) this.url = options.url
-    }
+    };
     async navigate(url?: string): Promise<void> {
         if (url) return await this.driver.get(url); 
         else if (this.url) return await this.driver.get(this.url); 
@@ -49,4 +49,13 @@ export class BasePage {
     async getAttribute(elementBy: By, attribute: string): Promise<string> {
         return (await this.getElement(elementBy)).getAttribute(attribute);
     };
-}
+    async scrollIntoView(elementBy: By): Promise<void> {
+        const element = await this.getElement(elementBy);
+        await this.driver.executeScript('arguments[0].scrollIntoView(true);', element);
+      };
+      async clickWithJavaScript(elementBy: By): Promise<void> {
+        const element = await this.getElement(elementBy);
+        await this.driver.executeScript('arguments[0].click();', element);
+      };
+
+};
