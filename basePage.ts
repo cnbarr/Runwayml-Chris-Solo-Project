@@ -2,12 +2,14 @@ import {Builder, By, Key, Capabilities, until, WebDriver, WebElement} from "sele
 //import { Options } from "selenium-webdriver/edge";
 const chromedriver = require('chromedriver'); 
 
+
 interface Options {
     driver?: WebDriver; 
     //if no driver is supplied use the one in the constructor.
     url?: string; 
     // if no url is supplied use the one in the constructor. 
 }
+
 
 export class BasePage {
     driver: WebDriver; 
@@ -52,10 +54,14 @@ export class BasePage {
     async scrollIntoView(elementBy: By): Promise<void> {
         const element = await this.getElement(elementBy);
         await this.driver.executeScript('arguments[0].scrollIntoView(true);', element);
-      };
-      async clickWithJavaScript(elementBy: By): Promise<void> {
+    };
+    async clickWithJavaScript(elementBy: By): Promise<void> {
         const element = await this.getElement(elementBy);
         await this.driver.executeScript('arguments[0].click();', element);
-      };
+    };
+    async getResults(elementBy: By): Promise<string> {
+        return this.getText(elementBy);
+      }
+      
 
 };
