@@ -61,7 +61,7 @@ export class BasePage {
     };
     async getResults(elementBy: By): Promise<string> {
         return this.getText(elementBy);
-      }
+      };
       
 
 };
