@@ -32,12 +32,19 @@ export class runwayPage extends BasePage {
 
     planChoice: By = By.xpath('//button[@data-state="initial_choice" and @data-testid="plan-initial_choice-cta"]');
     textToImage: By = By.xpath('//a[@data-testid="popular-tools-standard-magic-tool-card-text-to-image"]');
-    promptField: By = By.id('prompt-textfield');
-    generateBtn: By = By.className('GenerateButton__Button-sc-1bgbxav-0 dCsbtZ');
+    imagePrompt: By = By.id('prompt-textfield');
+    imageGenBtn: By = By.className('GenerateButton__Button-sc-1bgbxav-0 dCsbtZ');
 
     textToVideo: By = By.xpath('//a[@data-testid="popular-tools-standard-magic-tool-card-gen-2"]');
+    videoPrompt: By = By.className('TextArea-sc-13crepx-0 TextInput__StyledTextArea-sc-3zxim-0 fSMxOC');
+    videoGenBtn: By = By.className('Button-sc-j7y3zb-0 Button__StyledButton-sc-j7y3zb-1 dGqSyu Gen2GenerateOrPreviewButton__StyledButton-sc-ea9uba-0 dpThPo');
     
+    async switchTabs() {
+      let currentTabs = await this.driver.getAllWindowHandles();
+      await this.driver.switchTo().window(currentTabs[1]);
       
+      
+  };
   
 
 

@@ -18,20 +18,10 @@ describe('Social Links Regression Test', () => {
         await runway.driver.sleep(5000);
         await runway.scrollIntoView(runway.footerHome); 
         await runway.clickWithJavaScript(runway.discord);
-        
-        await runway.driver.wait(async () => {
-            const handles = await runway.driver.getAllWindowHandles();
-            return handles.length === 2;
-          });
-          const handles = await runway.driver.getAllWindowHandles();
-          const currentHandle = await runway.driver.getWindowHandle();
-          const newHandle = handles.find((handle) => handle !== currentHandle);
-          await runway.driver.switchTo().window(newHandle);
-          await runway.driver.sleep(4000);
-          const screenshotData = await runway.driver.takeScreenshot();
-          fs.writeFileSync(`${__dirname}/discord.png`, screenshotData, 'base64');
-          await runway.driver.sleep(1000);
-          
+        await runway.switchTabs();
+        await runway.driver.sleep(5000);
+        const screenshotData = await runway.driver.takeScreenshot();
+        fs.writeFileSync(`${__dirname}/discord.png`, screenshotData, 'base64');
           
         
       });
