@@ -20,7 +20,7 @@ describe('Contact Form Regression Test', () => {
         await runway.clickWithJavaScript(runway.emailField);
         await runway.setInput(runway.emailField, 'cnbarr28@gmail.com');
         await runway.clickWithJavaScript(runway.companyField);
-        await runway.setInput(runway.companyField, 'Education');
+        await runway.setInput(runway.companyField, 'Student of Knowledge');
         await runway.clickWithJavaScript(runway.msgField);
         await runway.setInput(runway.msgField, 'Hello, I hope you are having a phenomenal day!');
         await runway.clickWithJavaScript(runway.submitButton);

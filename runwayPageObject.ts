@@ -29,6 +29,13 @@ export class runwayPage extends BasePage {
     errorMsg: By = By.className('Login__TopFlash__8AYs_ Login__ShowTopFlash__37Kcd Login__FlashError__1M4qy');
     expectedErrorMsg = "Not a valid Password";
     expectedErrorMsg2 = "Wrong username/password combination.";
+
+    planChoice: By = By.xpath('//button[@data-state="initial_choice" and @data-testid="plan-initial_choice-cta"]');
+    textToImage: By = By.xpath('//a[@data-testid="popular-tools-standard-magic-tool-card-text-to-image"]');
+    promptField: By = By.id('prompt-textfield');
+    generateBtn: By = By.className('GenerateButton__Button-sc-1bgbxav-0 dCsbtZ');
+
+    textToVideo: By = By.xpath('//a[@data-testid="popular-tools-standard-magic-tool-card-gen-2"]');
     
       
   
