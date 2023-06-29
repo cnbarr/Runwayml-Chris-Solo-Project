@@ -24,11 +24,11 @@ describe('Login and create a image', () => {
         await runway.click(runway.planChoice);
         await runway.click(runway.textToImage);
         await runway.click(runway.imagePrompt);
-        await runway.setInput(runway.imagePrompt,"cyborg female robot, holding human baby, that is connected to her by a glowing light fiber cable, in a futuristic world, hyper realistic, 4K, masterpiece, photo realistic, cinematic, s1000, c80");
+        await runway.setInput(runway.imagePrompt,"cyborg female robot, holding human baby, that is connected to her by a glowing fiber light cable, in a futuristic world, hyper-realistic, 4K, masterpiece, photo realistic, 4k textures, 8k, HDR, intricate, hyper-detailed, sharp focus, cinematic look --s1000 --c80");
         await runway.click(runway.imageGenBtn);
         await runway.driver.sleep(12000);
         const screenshotData = await runway.driver.takeScreenshot();
-          fs.writeFileSync(`${__dirname}/textToImage.png`, screenshotData, 'base64');
+          fs.writeFileSync(`${__dirname}/textToImage1.png`, screenshotData, 'base64');
 
         
       });

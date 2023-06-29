@@ -24,11 +24,11 @@ describe('Login and create a video', () => {
         await runway.click(runway.planChoice);
         await runway.click(runway.textToVideo);
         await runway.click(runway.videoPrompt);
-        await runway.setInput(runway.videoPrompt,"A man frantically coding software in preparation for a rebellion in a dystopian world, cinematic masterpeice, hyper realistic");
+        await runway.setInput(runway.videoPrompt,"A man frantically coding software in preparation for a rebellion in a dystopian world, embarking on a battle in a post-apocalyptic dystopian America, portrayed with hyper-realism, inspiring hope and resilience, hyper-detailed, awe-inspiring, atmospheric, larger-than-life, 4k, 8k, intricate details --s1000 --c80");
         await runway.click(runway.videoGenBtn);
         await runway.driver.sleep(90000);
         const screenshotData = await runway.driver.takeScreenshot();
-          fs.writeFileSync(`${__dirname}/textToVideo.png`, screenshotData, 'base64');
+          fs.writeFileSync(`${__dirname}/textToVideo1.png`, screenshotData, 'base64');
 
         
       });

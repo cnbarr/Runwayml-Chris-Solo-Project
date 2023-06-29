@@ -41,9 +41,7 @@ export class runwayPage extends BasePage {
     
     async switchTabs() {
       let currentTabs = await this.driver.getAllWindowHandles();
-      await this.driver.switchTo().window(currentTabs[1]);
-      
-      
+      await this.driver.switchTo().window(currentTabs[1]);  
   };
   
 
